@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CampusFinder</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        CampusFinder
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#features">Features</a>
+        <a href="#reviews">Reviews</a>
+        <a href="pages/login.html">Login</a>
+        <a href="pages/register.html">Register</a>
+    </nav>
+
+</header>
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search College" 
+        >
+
+        <button onclick="goToCollege()">
+            Search
+        </button>
+
+    </div>
+
+</section>
+
+<section class="hero">
+
+    <h1>Find Your Dream College</h1>
+
+    <p>
+        Search colleges, compare branches,
+        check fees, cutoff ranks and reviews.
+    </p>
+    <a href="pages/dashboard.html">
+    <button class="explore-btn">
+        Explore Colleges
+    </button>
+</a>
+
+</section>
+
+<section class="features" id="features">
+
+    <h2>Our Features</h2>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+            <h3>College Search</h3>
+            <p>Search colleges instantly.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>College Predictor</h3>
+            <p>Predict colleges based on rank.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Fee Structure</h3>
+            <p>Compare college fees.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Reviews</h3>
+            <p>Read student reviews.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="reviews" id="reviews">
+
+    <h2>Student Reviews</h2>
+
+    <div class="review-container">
+
+        <div class="review-card">
+            <h3>Priya</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>Very useful admission portal.</p>
+        </div>
+
+        <div class="review-card">
+            <h3>Rahul</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>Easy college comparison.</p>
+        </div>
+
+        <div class="review-card">
+            <h3>Anjali</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>College predictor helped me.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <h3>CampusFinder</h3>
+
+    <p>
+        Search Colleges • Compare Fees • Predict Admissions
+    </p>
+
+    <p>
+        © 2026 CampusFinder
+    </p>
+
+</footer>
+
+<script src="js/colleges.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

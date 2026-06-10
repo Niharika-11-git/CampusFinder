@@ -1,0 +1,100 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    display:flex;
+    background:#f1f5f9;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:#001f5c;
+    color:white;
+    padding:30px;
+}
+
+.sidebar h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin:20px 0;
+}
+
+.sidebar ul li a{
+    color:white;
+    text-decoration:none;
+}
+
+/* Main */
+
+.main-content{
+    flex:1;
+    padding:30px;
+}
+
+.main-content h1{
+    margin-bottom:25px;
+}
+
+/* Cards */
+
+.stats{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    width:220px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.card h2{
+    color:#2563eb;
+}
+
+/* Form */
+
+.college-form{
+    background:white;
+    padding:30px;
+    margin-top:30px;
+    border-radius:15px;
+}
+
+.college-form h2{
+    margin-bottom:20px;
+}
+
+.college-form input{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.college-form button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:14px 25px;
+    border-radius:30px;
+    cursor:pointer;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusFinder Dashboard</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>CampusFinder</h2>
+
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#">Saved Colleges</a></li>
+            <li><a href="#">Predictions</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="../index.html">Logout</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <!-- Welcome -->
+
+        <div class="welcome-card">
+
+            <h1>Welcome Student 👋</h1>
+
+            <p>
+                Explore colleges, compare branches,
+                check fees and predict admissions.
+            </p>
+
+        </div>
+
+        <!-- Selected College Details -->
+
+        <div id="collegeDetails"></div>
+
+        <!-- Predictor -->
+
+        <div class="predictor-box">
+
+            <h2>College Predictor</h2>
+
+            <input
+                type="number"
+                id="rankInput"
+                placeholder="Enter Your Rank"
+            >
+
+            <select id="categoryInput">
+                <option value="">Select Category</option>
+                <option>OC</option>
+                <option>BC-A</option>
+                <option>BC-B</option>
+                <option>BC-C</option>
+                <option>BC-D</option>
+                <option>BC-E</option>
+                <option>SC</option>
+                <option>ST</option>
+            </select>
+
+            <select id="branchInput">
+                <option value="">Select Branch</option>
+                <option>CSE</option>
+                <option>AIML</option>
+                <option>DS</option>
+                <option>IT</option>
+                <option>ECE</option>
+                <option>EEE</option>
+            </select>
+
+            <button onclick="predictCollege()">
+                Predict Colleges
+            </button>
+
+            <div id="predictionResult"></div>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+                <h2>150+</h2>
+                <p>Colleges</p>
+            </div>
+
+            <div class="stat-card">
+                <h2>25+</h2>
+                <p>Branches</p>
+            </div>
+
+            <div class="stat-card">
+                <h2>500+</h2>
+                <p>Reviews</p>
+            </div>
+
+        </div>
+
+        <!-- Top Colleges -->
+
+        <div class="college-section">
+
+            <h2>Top Engineering Colleges</h2>
+
+            <table>
+
+                <tr>
+                    <th>College</th>
+                    <th>Branches</th>
+                    <th>Fees</th>
+                </tr>
+
+                <tr>
+                    <td>GRIET</td>
+                    <td>CSE, AIML, DS</td>
+                    <td>₹1,30,000</td>
+                </tr>
+
+                <tr>
+                    <td>BVRIT</td>
+                    <td>CSE, AIML</td>
+                    <td>₹1,35,000</td>
+                </tr>
+
+                <tr>
+                    <td>VNR VJIET</td>
+                    <td>CSE, IT</td>
+                    <td>₹1,45,000</td>
+                </tr>
+
+                <tr>
+                    <td>CBIT</td>
+                    <td>CSE, AIML</td>
+                    <td>₹1,50,000</td>
+                </tr>
+
+                <tr>
+                    <td>MGIT</td>
+                    <td>CSE, ECE</td>
+                    <td>₹1,25,000</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="../js/colleges.js"></script>
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

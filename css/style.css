@@ -1,0 +1,229 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#001f5c;
+}
+
+/* HEADER */
+
+header{
+    background:#001f5c;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:16px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#60a5fa;
+}
+
+/* SEARCH SECTION */
+
+.search-section{
+    background:#001f5c;
+    padding:20px;
+}
+
+.search-box{
+    max-width:700px;
+    margin:auto;
+    display:flex;
+    gap:10px;
+}
+
+.search-box input{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.search-box button{
+    padding:15px 25px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+}
+
+.search-box button:hover{
+    background:#1d4ed8;
+}
+
+/* HERO */
+
+.hero{
+    background:#001f5c;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+}
+.hero-buttons button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* FEATURES */
+
+.features{
+    padding:60px 8%;
+    text-align:center;
+}
+
+.features h2{
+    color:#001f5c;
+    margin-bottom:30px;
+}
+
+.feature-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.feature-card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.feature-card h3{
+    color:#001f5c;
+    margin-bottom:10px;
+}
+
+/* REVIEWS */
+
+.reviews{
+    background:#eef2ff;
+    padding:60px 8%;
+    text-align:center;
+}
+
+.reviews h2{
+    color:#001f5c;
+    margin-bottom:30px;
+}
+
+.review-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.review-card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+
+footer{
+    background:#001f5c;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+footer h3{
+    margin-bottom:10px;
+}
+
+/* SEARCH RESULT CARD */
+
+.college-info-card{
+    background:white;
+    max-width:700px;
+    margin:20px auto;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.college-info-card h2{
+    color:#001f5c;
+    margin-bottom:15px;
+}
+
+.college-info-card p{
+    margin:10px 0;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .search-box{
+        flex-direction:column;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+}
+.explore-btn{
+    margin-top:20px;
+    padding:15px 30px;
+    background:white;
+    color:#001f5c;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.explore-btn:hover{
+    background:#dbeafe;
+}

@@ -1,0 +1,65 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#001f5c;
+    color:white;
+    padding:40px;
+}
+
+.college-container{
+    max-width:1000px;
+    margin:auto;
+}
+
+.college-container h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.college-card{
+    background:white;
+    color:#001f5c;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.college-card h2{
+    margin-bottom:15px;
+}
+
+.college-card ul{
+    padding-left:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#2563eb;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    border:1px solid #ddd;
+}
+
+button{
+    display:block;
+    margin:30px auto;
+    padding:14px 30px;
+    border:none;
+    border-radius:30px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+}
