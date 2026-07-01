@@ -26,6 +26,18 @@ app.post("/register", async (req, res) => {
 
         const { name, email, password } = req.body;
 
+        // Check if email already exists
+        const existingUser = await User.findOne({ email });
+
+        if (existingUser) {
+
+            return res.json({
+                success: false,
+                message: "Email already registered"
+            });
+
+        }
+
         const newUser = new User({
             name,
             email,
@@ -43,9 +55,9 @@ app.post("/register", async (req, res) => {
 
         console.log(error);
 
-        res.json({
+        res.status(500).json({
             success: false,
-            message: "Registration Failed"
+            message: "Internal Server Error"
         });
 
     }
