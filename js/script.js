@@ -295,10 +295,222 @@ function predictCollege(){
 // VIEW DETAILS
 // ======================
 
-function viewCollegeDetails(){
+function searchCollege(){
 
-    alert(
-        "College Details Page will be added in next step."
+    let input =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+    let result =
+    document.getElementById("result");
+
+    let found = colleges.filter(college =>
+        college.name.toLowerCase().includes(input)
     );
+
+    if(found.length > 0){
+
+        result.innerHTML = "";
+
+        found.forEach(college => {
+
+            result.innerHTML += `
+            <div class="college-card">
+
+                <h3>${college.name}</h3>
+
+                <p><strong>Location:</strong>
+                ${college.location}</p>
+
+                <p><strong>Fees:</strong>
+                ${college.fees}</p>
+
+                <p><strong>Cutoff:</strong>
+                ${college.cutoff}</p>
+
+            </div>
+            `;
+        });
+
+    }else{
+
+        result.innerHTML =
+        "<h3>No College Found</h3>";
+
+    }
+
+}
+function openCollege(college){
+
+    localStorage.setItem(
+        "selectedCollege",
+        college
+    );
+
+    window.location.href =
+    "college-details.html";
+
+}
+
+// ===============================
+// ADD TO COMPARE
+// ===============================
+
+function addToCompare(collegeId){
+
+    const colleges = {
+
+        griet:{
+            name:"GRIET",
+            location:"Hyderabad",
+            fee:"₹1,30,000",
+            package:"₹44 LPA",
+            rating:"4.8"
+        },
+
+        cbit:{
+            name:"CBIT",
+            location:"Hyderabad",
+            fee:"₹1,50,000",
+            package:"₹52 LPA",
+            rating:"4.9"
+        },
+
+        vnr:{
+            name:"VNR VJIET",
+            location:"Hyderabad",
+            fee:"₹1,45,000",
+            package:"₹51 LPA",
+            rating:"4.8"
+        },
+
+        bvrit:{
+            name:"BVRIT",
+            location:"Hyderabad",
+            fee:"₹1,35,000",
+            package:"₹32 LPA",
+            rating:"4.7"
+        },
+
+        mgit:{
+    name:"Mahatma Gandhi Institute of Technology",
+    location:"Hyderabad",
+    fee:"₹1,25,000",
+    package:"₹24 LPA",
+    rating:"4.6"
+},
+
+cvr:{
+    name:"CVR College of Engineering",
+    location:"Hyderabad",
+    fee:"₹1,40,000",
+    package:"₹33 LPA",
+    rating:"4.7"
+},
+
+    };
+
+    let compare =
+    JSON.parse(localStorage.getItem("compareColleges")) || [];
+
+    // Already added?
+    const exists =
+    compare.some(item => item.name === colleges[collegeId].name);
+
+    if(exists){
+
+        alert("College already added to Compare.");
+
+        return;
+
+    }
+
+    // Maximum 3 colleges
+
+    if(compare.length >= 3){
+
+        alert("You can compare only 3 colleges.");
+
+        return;
+
+    }
+
+    compare.push(colleges[collegeId]);
+
+    localStorage.setItem(
+
+        "compareColleges",
+
+        JSON.stringify(compare)
+
+    );
+
+    alert("College added for comparison.");
+
+}
+
+function toggleSaveCollege(collegeId){
+
+const colleges={
+
+griet:{
+name:"GRIET",
+location:"Hyderabad",
+image:"griet.jpg"
+},
+
+cbit:{
+name:"CBIT",
+location:"Hyderabad",
+image:"cbit.png"
+},
+
+vnr:{
+name:"VNR VJIET",
+location:"Hyderabad",
+image:"vnr.png"
+},
+
+bvrit:{
+name:"BVRIT",
+location:"Hyderabad",
+image:"bvrit.png"
+},
+
+mgit:{
+name:"MGIT",
+location:"Hyderabad",
+image:"mgit.jpg"
+},
+
+cvr:{
+name:"CVR",
+location:"Hyderabad",
+image:"cvr.jpg"
+}
+
+};
+
+let saved=
+JSON.parse(localStorage.getItem("savedColleges"))||[];
+
+const index=saved.findIndex(item=>item.name===colleges[collegeId].name);
+
+if(index==-1){
+
+saved.push(colleges[collegeId]);
+
+alert("College Saved ❤️");
+
+}else{
+
+saved.splice(index,1);
+
+alert("College Removed ❤️");
+
+}
+
+localStorage.setItem("savedColleges",JSON.stringify(saved));
 
 }

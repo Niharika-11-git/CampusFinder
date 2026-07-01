@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Saved Colleges</title>
+
+<link rel="stylesheet" href="../css/saved.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+
+CampusFinder
+
+</div>
+
+<nav>
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="profile.html">Profile</a>
+
+<a href="../index.html">Home</a>
+
+<button id="logoutBtn">
+
+Logout
+
+</button>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<h1>
+
+❤️ Saved Colleges
+
+</h1>
+
+<div id="savedContainer">
+
+</div>
+
+</div>
+
+<script src="../js/saved.js"></script>
+
+<script>
+
+document
+.getElementById("logoutBtn")
+.addEventListener("click",function(){
+
+if(confirm("Do you want to logout?")){
+
+localStorage.clear();
+
+window.location.href="../index.html";
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>

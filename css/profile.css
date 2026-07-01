@@ -1,0 +1,248 @@
+body{
+
+    margin:0;
+
+    font-family:Poppins,sans-serif;
+
+    background:#f4f7fb;
+
+}
+
+.info-row{
+
+padding:22px 0;
+
+font-size:18px;
+
+}
+
+.header{
+
+    background:#0B3D91;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 40px;
+
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+.header nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin-left:25px;
+
+}
+
+.header nav a:hover{
+
+    color:#FFD54F;
+
+}
+
+.profile-card{
+
+    width:760px;
+
+    padding:45px;
+
+    margin:50px auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+    overflow:hidden;
+
+}
+
+.profile-header{
+
+    background:#0B3D91;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px;
+
+}
+
+.profile-header img{
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    border:5px solid white;
+
+    margin-bottom:15px;
+
+}
+
+.profile-info{
+
+    padding:30px;
+
+}
+
+.profile-info p{
+
+    font-size:18px;
+
+    border-bottom:1px solid #eee;
+
+    padding:15px 0;
+
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    padding:30px;
+
+}
+
+.buttons button{
+
+    flex:1;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    color:white;
+
+}
+
+#backBtn{
+
+    background:#0B3D91;
+
+}
+
+.profile-buttons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+}
+
+.logout-btn{
+
+    width:220px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#e53935;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 8px 20px rgba(229,57,53,.25);
+
+}
+
+.logout-btn:hover{
+
+    background:#c62828;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(229,57,53,.35);
+
+}
+
+.logout-btn:active{
+
+    transform:scale(.96);
+
+}
+/* ===========================
+   Logout Button
+=========================== */
+
+#logoutBtn{
+
+    width:220px;
+    padding:14px;
+    margin:30px auto 0;
+    display:block;
+
+    border:none;
+    border-radius:30px;
+
+    background:linear-gradient(135deg,#ff4b5c,#ff6b81);
+    color:white;
+
+    font-size:17px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+    box-shadow:0 8px 20px rgba(255,75,92,.35);
+
+}
+
+#logoutBtn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(255,75,92,.45);
+
+    background:linear-gradient(135deg,#ff3648,#ff5d72);
+
+}
+
+#logoutBtn:active{
+
+    transform:scale(.96);
+
+}
+
+#logoutBtn i{
+
+    margin-right:8px;
+
+}

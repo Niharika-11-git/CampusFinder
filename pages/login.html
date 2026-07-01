@@ -68,6 +68,8 @@ document
 
     e.preventDefault();
 
+    console.log("Login button clicked");    
+
     const email =
     document.getElementById("email").value;
 
@@ -93,14 +95,32 @@ document
         const data =
         await response.json();
 
-        alert(data.message);
+        document.getElementById("successMessage")
+        .style.display = "block";
 
-        if(data.success){
+            setTimeout(() => {
 
             window.location.href =
             "dashboard.html";
 
-        }
+        }, 1500);
+
+        if(data.success){
+
+    localStorage.setItem(
+        "userEmail",
+        data.email
+    );
+
+    localStorage.setItem(
+        "userName",
+        data.name
+    );
+
+    window.location.href =
+    "dashboard.html";
+
+}
 
     }catch(error){
 
@@ -111,6 +131,10 @@ document
 });
 
 </script>
+
+<div id="successMessage" class="success-message">
+    Login Successful ✓
+</div>
 
 </body>
 

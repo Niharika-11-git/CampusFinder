@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusFinder | Profile</title>
+
+    <link rel="stylesheet" href="../css/profile.css">
+
+</head>
+
+<body>
+
+<!-- Header -->
+
+<header class="header">
+
+    <div class="logo">
+        CampusFinder
+    </div>
+
+    <nav>
+
+        <a href="dashboard.html">Dashboard</a>
+
+        <a href="saved.html">Saved Colleges</a>
+
+        <a href="compare.html">Compare</a>
+
+        <a href="profile.html" class="active">Profile</a>
+
+        <a href="../index.html">Home</a>
+
+    </nav>
+
+</header>
+
+
+<div class="container">
+
+<div class="profile-card">
+
+    <div class="profile-header">
+
+        <img src="../images/student.png" class="profile-img">
+
+        <h1 id="welcomeText"></h1>
+
+        <p>Engineering Student</p>
+
+    </div>
+
+    <div class="profile-info">
+
+        <div class="info-row">
+
+            <span>Name</span>
+
+            <strong id="userName"></strong>
+
+        </div>
+
+        <div class="info-row">
+
+            <span>Email</span>
+
+            <strong id="userEmail"></strong>
+
+        </div>
+
+        <div class="info-row">
+
+            <span>Status</span>
+
+            <strong>Active Student</strong>
+
+        </div>
+
+        <div class="info-row">
+
+            <span>Platform</span>
+
+            <strong>CampusFinder</strong>
+
+        </div>
+
+        <div class="info-row">
+
+            <span>Course</span>
+
+            <strong>Diploma → B.Tech (ECET)</strong>
+
+        </div>
+
+        <div class="info-row">
+
+            <span>Location</span>
+
+            <strong>Telangana</strong>
+
+        </div>
+
+    </div>
+
+    <div class="profile-buttons">
+
+        <button id="logoutBtn">
+    <i class="fas fa-right-from-bracket"></i> Logout
+</button>
+
+    </div>
+
+</div>
+
+</div>
+
+<script src="../js/profile.js"></script>
+
+<script>
+const logoutBtn = document.getElementById("logoutBtn");
+
+logoutBtn.addEventListener("click", function () {
+
+    const confirmLogout = confirm("Are you sure you want to logout?");
+
+    if (confirmLogout) {
+
+        // Remove only login information
+        localStorage.removeItem("userName");
+        localStorage.removeItem("userEmail");
+
+        // Go to login page
+        window.location.href = "login.html";
+    }
+
+});
+</script>
+
+</body>
+
+</html>

@@ -1,139 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>CampusFinder</title>
 
 <link rel="stylesheet" href="css/style.css">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
 
-<header>
+<!-- ================= NAVBAR ================= -->
 
-    <div class="logo">
-        CampusFinder
-    </div>
+<header class="navbar">
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="#features">Features</a>
-        <a href="#reviews">Reviews</a>
-        <a href="pages/login.html">Login</a>
-        <a href="pages/register.html">Register</a>
-    </nav>
+<div class="logo">
+
+CampusFinder
+
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="pages/dashboard.html#predictor-card">College Predictor</a>
+
+<a href="pages/dashboard.html">Dashboard</a>
+
+<a href="pages/login.html">Login</a>
+
+<a href="pages/register.html" class="register-btn">
+
+Register
+
+</a>
+
+</nav>
 
 </header>
 
-<section class="search-section">
-
-    <div class="search-box">
-
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search College" 
-        >
-
-        <button onclick="goToCollege()">
-            Search
-        </button>
-
-    </div>
-
-</section>
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-    <h1>Find Your Dream College</h1>
+<div class="hero-left">
 
-    <p>
-        Search colleges, compare branches,
-        check fees, cutoff ranks and reviews.
-    </p>
-    <a href="pages/dashboard.html">
-    <button class="explore-btn">
-        Explore Colleges
+<h4>
+
+WELCOME TO CAMPUSFINDER
+
+</h4>
+
+<h1>
+
+Find Your Dream College
+
+</h1>
+
+<p>
+
+Search colleges, compare branches,
+predict admissions,
+check fee structure
+and explore placement details.
+
+</p>
+
+<div class="search-box">
+
+<input
+
+type="text"
+
+placeholder="Search College..."
+
+id="searchInput"
+
+>
+
+<button onclick="goToCollege()">
+
+Search
+
+</button>
+
+</div>
+
+<a href="pages/dashboard.html">
+
+<button class="hero-btn">
+
+Explore Now
+
+</button>
+
+</a>
+
+</div>
+
+<div class="hero-right">
+
+<img
+
+src="images/student.png"
+
+alt="Student"
+
+>
+
+</div>
+
+</section>
+
+<!-- ================= CARDS ================= -->
+
+<section class="feature-section">
+
+<div class="feature-card">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<h3>
+
+College Predictor
+
+</h3>
+
+<p>
+
+Predict colleges using ECET Rank.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-ranking-star"></i>
+
+<h3>
+
+Rank Analysis
+
+</h3>
+
+<p>
+
+Know previous cutoff ranks.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-indian-rupee-sign"></i>
+
+<h3>
+
+Fee Comparison
+
+</h3>
+
+<p>
+
+Compare fee structures.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= TOP COLLEGES ================= -->
+
+<section
+class="college-section"
+id="topColleges">
+
+<h2>
+
+Top Engineering Colleges
+
+</h2>
+
+<div class="college-grid">
+
+<div class="college-card">
+
+<img src="images/colleges/griet.jpg">
+
+<h3>
+
+GRIET
+
+</h3>
+
+<p>
+
+Hyderabad
+
+</p>
+
+<a href="pages/dashboard.html">
+    <button>
+        View Details
     </button>
 </a>
 
+</div>
+
+<div class="college-card">
+
+<img src="images/colleges/bvrit.jpg">
+
+<h3>
+
+BVRIT
+
+</h3>
+
+<p>
+
+Hyderabad
+
+</p>
+
+<a href="pages/dashboard.html">
+    <button>
+        View Details
+    </button>
+</a>
+
+</div>
+
+<div class="college-card">
+
+<img src="images/colleges/cbit.jpg">
+
+<h3>
+
+CBIT
+
+</h3>
+
+<p>
+
+Hyderabad
+
+</p>
+
+<a href="pages/dashboard.html">
+    <button>
+        View Details
+    </button>
+</a>
+
+</div>
+
+<div class="college-card">
+
+<img src="images/colleges/mgit.jpg">
+
+<h3>
+
+MGIT
+
+</h3>
+
+<p>
+
+Hyderabad
+
+</p>
+
+<a href="pages/dashboard.html">
+    <button>
+        View Details
+    </button>
+</a>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="features" id="features">
-
-    <h2>Our Features</h2>
-
-    <div class="feature-container">
-
-        <div class="feature-card">
-            <h3>College Search</h3>
-            <p>Search colleges instantly.</p>
-        </div>
-
-        <div class="feature-card">
-            <h3>College Predictor</h3>
-            <p>Predict colleges based on rank.</p>
-        </div>
-
-        <div class="feature-card">
-            <h3>Fee Structure</h3>
-            <p>Compare college fees.</p>
-        </div>
-
-        <div class="feature-card">
-            <h3>Reviews</h3>
-            <p>Read student reviews.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<section class="reviews" id="reviews">
-
-    <h2>Student Reviews</h2>
-
-    <div class="review-container">
-
-        <div class="review-card">
-            <h3>Priya</h3>
-            <p>⭐⭐⭐⭐⭐</p>
-            <p>Very useful admission portal.</p>
-        </div>
-
-        <div class="review-card">
-            <h3>Rahul</h3>
-            <p>⭐⭐⭐⭐⭐</p>
-            <p>Easy college comparison.</p>
-        </div>
-
-        <div class="review-card">
-            <h3>Anjali</h3>
-            <p>⭐⭐⭐⭐⭐</p>
-            <p>College predictor helped me.</p>
-        </div>
-
-    </div>
-
-</section>
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <h3>CampusFinder</h3>
+<h2>
 
-    <p>
-        Search Colleges • Compare Fees • Predict Admissions
-    </p>
+CampusFinder
 
-    <p>
-        © 2026 CampusFinder
-    </p>
+</h2>
+
+<p>
+
+Helping Students Choose Better Colleges.
+
+</p>
+
+<p>
+
+© 2026 CampusFinder
+
+</p>
 
 </footer>
 
-<script src="js/colleges.js"></script>
 <script src="js/script.js"></script>
 
 </body>
+
 </html>

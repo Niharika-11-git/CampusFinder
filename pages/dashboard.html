@@ -2,168 +2,408 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>CampusFinder Dashboard</title>
 
     <link rel="stylesheet" href="../css/dashboard.css">
+
 </head>
 
 <body>
 
-    <!-- Sidebar -->
+<!-- ================= HEADER ================= -->
 
-    <div class="sidebar">
+<header class="header">
 
-        <h2>CampusFinder</h2>
-
-        <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a href="#">Saved Colleges</a></li>
-            <li><a href="#">Predictions</a></li>
-            <li><a href="#">Reviews</a></li>
-            <li><a href="../index.html">Logout</a></li>
-        </ul>
-
+    <div class="logo">
+        CampusFinder
     </div>
 
-    <!-- Main Content -->
+    <nav>
 
-    <div class="main-content">
+       <a href="dashboard.html" class="active">Dashboard</a>
 
-        <!-- Welcome -->
+        <a href="../index.html">Home</a>
 
-        <div class="welcome-card">
+        <a href="compare.html">Compare</a>
 
-            <h1>Welcome Student 👋</h1>
+         <a href="saved.html">Saved Colleges</a>
+
+        <a href="profile.html">Profile</a>
+
+        <button id="logoutBtn">
+            Logout
+        </button>
+
+    </nav>
+
+</header>
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+    <!-- Welcome -->
+
+    <section class="welcome-card">
+
+        <div class="welcome-text">
+
+            <h1 id="welcomeUser">
+                Welcome 👋
+            </h1>
 
             <p>
-                Explore colleges, compare branches,
-                check fees and predict admissions.
+                Find your dream engineering college,
+                compare colleges,
+                predict admissions,
+                and explore placement opportunities.
             </p>
 
+            <button
+class="explore-btn"
+onclick="document.querySelector('.top-colleges').scrollIntoView({behavior:'smooth'})">
+
+Explore Colleges
+
+</button>
+
         </div>
 
-        <!-- Selected College Details -->
+        <img
+        src="../images/student.png"
+        alt="Student"
+        class="student-image">
 
-        <div id="collegeDetails"></div>
+    </section>
 
-        <!-- Predictor -->
+    <!-- Statistics -->
 
-        <div class="predictor-box">
+    <section class="stats">
 
-            <h2>College Predictor</h2>
+        <div class="stat-card">
 
-            <input
-                type="number"
-                id="rankInput"
-                placeholder="Enter Your Rank"
-            >
+            <h2>150+</h2>
 
-            <select id="categoryInput">
-                <option value="">Select Category</option>
-                <option>OC</option>
-                <option>BC-A</option>
-                <option>BC-B</option>
-                <option>BC-C</option>
-                <option>BC-D</option>
-                <option>BC-E</option>
-                <option>SC</option>
-                <option>ST</option>
-            </select>
+            <p>Engineering Colleges</p>
 
-            <select id="branchInput">
-                <option value="">Select Branch</option>
-                <option>CSE</option>
-                <option>AIML</option>
-                <option>DS</option>
-                <option>IT</option>
-                <option>ECE</option>
-                <option>EEE</option>
-            </select>
+        </div>
 
-            <button onclick="predictCollege()">
-                Predict Colleges
+        <div class="stat-card">
+
+            <h2>25+</h2>
+
+            <p>Branches</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>500+</h2>
+
+            <p>Students Helped</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>95%</h2>
+
+            <p>Prediction Accuracy</p>
+
+        </div>
+
+    </section>
+
+    <!-- Predictor -->
+
+   <section
+class="predictor-card"
+id="predictor-card">
+
+        <h2>🎯 College Predictor</h2>
+
+        <input
+        type="number"
+        id="rankInput"
+        placeholder="Enter Your ECET Rank">
+
+        <select id="categoryInput">
+
+            <option value="">Select Category</option>
+
+            <option>OC</option>
+            <option>BC-A</option>
+            <option>BC-B</option>
+            <option>BC-C</option>
+            <option>BC-D</option>
+            <option>BC-E</option>
+            <option>SC</option>
+            <option>ST</option>
+
+        </select>
+
+        <select id="branchInput">
+
+            <option value="">Select Branch</option>
+
+            <option>CSE</option>
+            <option>AIML</option>
+            <option>DS</option>
+            <option>IT</option>
+            <option>ECE</option>
+            <option>EEE</option>
+
+        </select>
+
+        <button onclick="predictCollege()">
+
+            Predict Colleges
+
+        </button>
+
+        <div id="predictionResult"></div>
+
+    </section>
+
+    <!-- Top Colleges -->
+
+    <section class="top-colleges">
+
+        <h2>🔥 Top Engineering Colleges</h2>
+
+        <div class="college-grid">
+
+            <div class="college-card">
+
+                <img
+                src="../images/colleges/griet.jpg"
+                alt="GRIET">
+
+                <h3>GRIET</h3>
+
+                <p>Hyderabad</p>
+
+                <button onclick="openCollege('griet')">
+                View Details
+                </button>
+                 
+                <button onclick="toggleSaveCollege('griet')">
+                    ❤️ Save
+                </button>
+
+                <button onclick="addToCompare('griet')">
+                    ⚖ Compare
+                </button>
+
+            </div>
+
+            <div class="college-card">
+
+                <img
+                src="../images/colleges/cbit.jpg"
+                alt="CBIT">
+
+                <h3>CBIT</h3>
+
+                <p>Hyderabad</p>
+
+                <button onclick="openCollege('cbit')">
+                View Details
+                </button>
+                
+
+                <button onclick="toggleSaveCollege('cbit')">
+                ❤️ Save
+                </button>
+
+                <button onclick="addToCompare('cbit')">
+                ⚖ Compare
+                </button>
+
+            </div>
+
+            <div class="college-card">
+
+                <img
+                src="../images/colleges/vnr.jpg"
+                alt="VNR">
+
+                <h3>VNR VJIET</h3>
+
+                <p>Hyderabad</p>
+
+                <button onclick="openCollege('vnr')">
+                View Details
+                </button>
+                
+                <button onclick="toggleSaveCollege('vnr')">
+                ❤️ Save
+                </button>
+
+                <button onclick="addToCompare('vnr')">
+                ⚖ Compare
+                </button>
+
+            </div>
+
+            <div class="college-card">
+
+                <img
+                src="../images/colleges/bvrit.jpg"
+                alt="BVRIT">
+
+                <h3>BVRIT</h3>
+
+                <p>Hyderabad</p>
+
+                <button onclick="openCollege('bvrit')">
+                View Details
+                </button>
+            
+                <button onclick="toggleSaveCollege('bvrit')">
+                ❤️ Save
+                </button>
+
+                <button onclick="addToCompare('bvrit')">
+                ⚖ Compare
+                </button>
+
+            </div>
+
+            <div class="college-card">
+
+                <img
+                src="../images/colleges/mgit.jpg"
+                alt="MGIT">
+
+                <h3>MGIT</h3>
+
+                <p>Hyderabad</p>
+
+                <button onclick="openCollege('mgit')">
+                View Details
+                </button>
+
+
+                <button onclick="toggleSaveCollege('mgit')">
+                ❤️ Save
+                </button>
+
+                <button onclick="addToCompare('mgit')">
+                ⚖ Compare
             </button>
 
-            <div id="predictionResult"></div>
+            </div>
+
+            <div class="college-card">
+
+                <img
+                src="../images/colleges/cvr.jpg"
+                alt="CVR">
+
+                <h3>CVR College</h3>
+
+                <p>Hyderabad</p>
+
+                <button onclick="openCollege('cvr')">
+View Details
+</button>
+
+<button onclick="toggleSaveCollege('cvr')">
+❤️ Save
+</button>
+
+<button onclick="addToCompare('cvr')">
+⚖ Compare
+</button>
+
+            </div>
 
         </div>
 
-        <!-- Statistics -->
+    </section>
 
-        <div class="stats-container">
+</div>
 
-            <div class="stat-card">
-                <h2>150+</h2>
-                <p>Colleges</p>
-            </div>
+<!-- Footer -->
 
-            <div class="stat-card">
-                <h2>25+</h2>
-                <p>Branches</p>
-            </div>
+<footer class="footer">
 
-            <div class="stat-card">
-                <h2>500+</h2>
-                <p>Reviews</p>
-            </div>
+    <h3>CampusFinder</h3>
 
-        </div>
+    <p>
 
-        <!-- Top Colleges -->
+        Search Colleges • Compare Fees • Predict Admissions
 
-        <div class="college-section">
+    </p>
 
-            <h2>Top Engineering Colleges</h2>
+    <p>
 
-            <table>
+        © 2026 CampusFinder
 
-                <tr>
-                    <th>College</th>
-                    <th>Branches</th>
-                    <th>Fees</th>
-                </tr>
+    </p>
 
-                <tr>
-                    <td>GRIET</td>
-                    <td>CSE, AIML, DS</td>
-                    <td>₹1,30,000</td>
-                </tr>
+</footer>
 
-                <tr>
-                    <td>BVRIT</td>
-                    <td>CSE, AIML</td>
-                    <td>₹1,35,000</td>
-                </tr>
+<!-- Scripts -->
 
-                <tr>
-                    <td>VNR VJIET</td>
-                    <td>CSE, IT</td>
-                    <td>₹1,45,000</td>
-                </tr>
+<script src="../js/colleges.js"></script>
 
-                <tr>
-                    <td>CBIT</td>
-                    <td>CSE, AIML</td>
-                    <td>₹1,50,000</td>
-                </tr>
+<script src="../js/script.js"></script>
 
-                <tr>
-                    <td>MGIT</td>
-                    <td>CSE, ECE</td>
-                    <td>₹1,25,000</td>
-                </tr>
+<script>
 
-            </table>
+const userEmail = localStorage.getItem("userEmail");
+const userName = localStorage.getItem("userName");
 
-        </div>
+if(!userEmail){
 
-    </div>
+    window.location.href="login.html";
 
-    <script src="../js/colleges.js"></script>
-    <script src="../js/script.js"></script>
+}
+
+if(userName){
+
+    document.getElementById("welcomeUser").innerHTML =
+    "Welcome " + userName + " 👋";
+
+}else{
+
+    document.getElementById("welcomeUser").innerHTML =
+    "Welcome Student 👋";
+
+}
+
+document.getElementById("logoutBtn")
+.addEventListener("click",function(){
+
+    const logout =
+    confirm("Are you sure you want to logout?");
+
+    if(logout){
+
+        localStorage.clear();
+
+        window.location.href="../index.html";
+
+    }
+
+});
+
+function dashboardOpenCollege(college){
+
+    localStorage.setItem("selectedCollege", college);
+
+    window.location.href = "college-details.html";
+
+}
+
+</script>
 
 </body>
+
 </html>
